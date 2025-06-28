@@ -1,34 +1,30 @@
-// frontend/src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import routing components
+import { BrowserRouter, Routes, Route} from 'react-router-dom'; 
 import { Navbar } from './Components/Navbar/Navbar';
-import LoginPage from './Components/LoginPage/LoginPage'; // Ensure it's default imported if you used 'export default'
+import LoginPage from './Pages/LoginPage'; 
+import Home from './Pages/Home';
 import './App.css';
+import ProductCategory from './Pages/ProductCategory';
+import Cart from './Pages/Cart';
+import Product from './Pages/Product';
 
 function App() {
   return (
-    // BrowserRouter wraps your entire application that needs routing capabilities
-    <Router>
-      <div>
-        {/* The Navbar will always be visible, regardless of the current route */}
-        <Navbar />
-
-        {/* Routes defines the different paths and the components to render for each */}
-        <Routes>
-          {/* Define your homepage route. You might have an actual HomePage component.
-              For now, let's just show a simple message or another component here.
-              If you have a separate HomePage component, import it and use it like <Route path="/" element={<HomePage />} />
-          */}
-      
-
-          {/* This route will render the LoginPage component when the URL is /login */}
-          <Route path="/login" element={<LoginPage />} />
-
-          {/* You can add more routes here for other pages (e.g., /signup, /products) */}
-          {/* <Route path="/signup" element={<SignupPage />} /> */}
-        </Routes>
-      </div>
-    </Router>
+  <div>
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/consoles' element={<ProductCategory category="consoles"/>}/>
+      <Route path='/games' element={<ProductCategory category="Games"/>}/>
+      <Route path="/product" element={<Product/>}>
+        <Route path=':productid' element={<Product/>}/>
+      </Route>
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/login' element={<LoginPage/>}/>
+    </Routes>
+    </BrowserRouter>
+  </div>
   );
 }
 
