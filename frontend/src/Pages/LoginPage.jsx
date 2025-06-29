@@ -1,37 +1,44 @@
-// frontend/src/components/LoginPage.js
+// frontend/src/Pages/LoginPage/LoginPage.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './LoginPage.css'; // File made for styling the login page
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize navigate hook
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
 
-    // Basic validation (you'll replace this with actual API calls) find api calls for validation to reaplce this with
+    // Basic validation (you'll replace this with actual API calls)
     if (email === '' || password === '') {
       setError('Please enter both email and password.');
       return;
     }
 
-    // In a real application, you would send these credentials to a backend API
+    // send these credentials to a backend API
     // For now, let's just log them and simulate success/failure
     console.log('Attempting to log in with:', { email, password });
 
     // Simulate an API call
     if (email === 'user@example.com' && password === 'password123') {
       setError('');
-      alert('Login Successful!');
+      // Using a custom modal/message box instead of alert()
+      <div className="modal">
+        <p>Login Successful!</p>
+      </div>
+      console.log('Login Successful!');
       // Redirect to a dashboard or home page
-      // For now, just logging
+      navigate('/'); // Example: navigate to home page on successful login
     } else {
       setError('Invalid email or password.');
     }
   };
 
   return (
+    <div className="login-page-wrapper">
     <div className="login-container">
       <h2>Login to GameStop Clone</h2>
       <form onSubmit={handleSubmit} className="login-form">
@@ -59,8 +66,9 @@ function LoginPage() {
         <button type="submit" className="login-button">Login</button>
       </form>
       <p className="signup-link">
-        Don't have an account? <a href="/signup">Sign Up</a>
+        Don't have an account? <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#e4002b', textDecoration: 'none', fontWeight: 'bold' }}>Sign Up</span>
       </p>
+    </div>
     </div>
   );
 }
