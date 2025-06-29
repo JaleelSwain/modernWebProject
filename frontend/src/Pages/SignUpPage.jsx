@@ -38,7 +38,7 @@ function SignUpPage() {
   return (
     <div className="signup-page-wrapper">
     <div className="signup-container">
-      <h2>Create Your GameStop Clone Account</h2>
+      <h2>Create Your jmGames Account</h2>
       <form onSubmit={handleSubmit} className="signup-form">
         {error && <p className="error-message">{error}</p>}
         <div className="form-group">

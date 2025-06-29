@@ -40,7 +40,7 @@ function LoginPage() {
   return (
     <div className="login-page-wrapper">
     <div className="login-container">
-      <h2>Login to GameStop Clone</h2>
+      <h2>Login to jmGames</h2>
       <form onSubmit={handleSubmit} className="login-form">
         {error && <p className="error-message">{error}</p>}
         <div className="form-group">
