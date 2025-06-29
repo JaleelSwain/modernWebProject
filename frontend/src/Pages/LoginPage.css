@@ -7,9 +7,9 @@
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  /* Corrected gradient based on your Hero.css: */
+  /* Corrected gradient based on Hero.css: */
   background: linear-gradient(180deg, red, #e1ffea22 60%);
-  padding: 20px; /* Add some padding so the box isn't right against the edges */
+  padding: 20px; /* Added some padding so the box isn't right against the edges */
   box-sizing: border-box; /* Include padding in the element's total width and height */
   width: 100%; /* Ensure it spans the full width */
 }
