@@ -9,11 +9,11 @@ export const Item = (props) => {
       <div className="item-prices">
         <div className="item-price-new">
           ${props.new_price}
+          {props.price}
         </div>
-        <div className="item-price-old">
-          ${props.old_price}
-        </div>
+       
       </div>
     </div>
   )
 }
+

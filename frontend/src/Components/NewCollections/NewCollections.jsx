@@ -6,7 +6,7 @@ import { Item } from '../Items/Item'
 export const NewCollections = () => {
   return (
     <div className="newcollection">
-        <h1>New Collections</h1>
+        <h1>New Games</h1>
         <hr />
         <div className="collections">
             {new_collection.map((item,i)=>{
