@@ -4,9 +4,12 @@ import "./Navbar.css";
 
 import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
+import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const {getTotalCartItems} = useContext(ShopContext);
   const navigate = useNavigate();
 
   return (
@@ -45,7 +48,7 @@ export const Navbar = () => {
         <div onClick={() => navigate("/cart")} style={{ cursor: "pointer" }}>
           <img src={cart_icon} alt="Cart Icon" />
         </div>
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
   );
