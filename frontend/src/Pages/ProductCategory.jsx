@@ -9,9 +9,6 @@ export const ProductCategory = (props) => {
   return (
     <div className='product-category'>
       <div className="shopcategory-indexSort">
-        <p>
-          <span>Showing 1-12</span> out of 36 products
-        </p>
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="" />
         </div>
@@ -25,9 +22,6 @@ export const ProductCategory = (props) => {
             return null;
           }
         })}
-      </div>
-      <div className="shopcategory-loadmore">
-        Explore More
       </div>
     </div>
   )
