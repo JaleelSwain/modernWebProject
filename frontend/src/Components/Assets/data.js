@@ -1,36 +1,45 @@
-import soleps5 from './soleps5.jpeg'
-import seriesX from './seriesX.jpeg'
-import ps4pro from './ps4pro.jpeg'
-import seriesS from './seriesS.jpeg'
+
 
 let data_product = [
   {
     id: 1,
-    name: "PlayStation 5",
-    image: soleps5,
-    new_price: 649.99,
-    old_price: 699.99,
+    name: "Nintendo Switch (Original)",
+    price: 299.99,
+    category: "Console",
+    image: require("./switch.png"),
+    description: "Original Nintendo Switch with hybrid handheld and TV play modes."
   },
   {
     id: 2,
-    name: "Xbox Series X",
-    image: seriesX,
-    new_price: 599.99,
-    old_price: 649.99,
+    name: "Nintendo Switch 2",
+    price: 399.99,
+    category: "Console",
+    image: require("./switch2.jpeg"),
+    description: "New generation Nintendo Switch with upgraded performance and display."
   },
   {
     id: 3,
-    name: "PlayStation 4 Pro ",
-    image: ps4pro,
-    new_price: 449.99,
-    old_price: 499.99,
+    name: "PlayStation 4 Pro",
+    price: 399.99,
+    category: "Console",
+    image: require("./ps4pro.jpeg"),
+    description: "High-performance PS4 with 4K support and improved GPU."
   },
   {
     id: 4,
-    name: "Xbox Series S",
-    image: seriesS,
-    new_price: 699.00,
-    old_price: 749.00,
+    name: "PlayStation 4 Slim",
+    price: 299.99,
+    category: "Console",
+    image: require("./ps4slim.jpeg"),
+    description: "Slimmer, more compact PS4 with same gaming power."
+  },
+  {
+    id: 5,
+    name: "PlayStation 5",
+    price: 499.99,
+    category: "Console",
+    image: require("./PS5.webp"),
+    description: "Next-gen Sony console with lightning-fast SSD and immersive DualSense controller."
   },
 ];
 

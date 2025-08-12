@@ -9,9 +9,21 @@ export const Popular = () => {
         <h1>Popular Consoles</h1>
         <hr />
         <div className="popular-item">
-            {data_product.map((item,i)=>{
-                return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-            })}
+           {[...data_product]
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 4)
+          .map((item, i) => {
+            return (
+              <Item
+                key={i}
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                price={item.price}
+                description={item.description}
+              />
+            );
+          })}
         </div>
     </div>
   )
