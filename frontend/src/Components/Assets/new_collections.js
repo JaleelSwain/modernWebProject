@@ -1,68 +1,68 @@
-import eldenRing from "./eldenRing.jpg"; 
-import spiderMan2 from "./spiderMan2.jpg"; 
-import godOfWar from "./godOfWar.jpg"; 
-import starfield from "./starfield.jpg";  
-import zelda from "./zelda.jpg"; 
-import cod from "./cod.jpg";  
-import ff from "./ff.jpg"; 
-import marioKartWorld from "./marioKartWorld.jpg"; 
 
 let new_collections = [
   {
-    id: 12,
+    id: 29,
+    name: "Hades",
+    price: 39.99,
+    category: "Game",
+    image: require("./hades.png"),
+    description: "Award-winning rogue-like action game set in Greek mythology."
+  },
+  {
+    id: 30,
+    name: "Demon Slayer 2",
+    price: 69.99,
+    category: "Game",
+    image: require("./demon.png"),
+    description: "."
+  },
+  {
+    id: 31,
+    name: "Metroid Dread",
+    price: 59.99,
+    category: "Game",
+    image: require("./md.png"),
+    description: "Sci-fi action-platformer featuring Samus in a mysterious alien facility."
+  },
+  {
+    id: 32,
+    name: "Cuphead",
+    price: 29.99,
+    category: "Game",
+    image: require("./cuphead.png"),
+    description: "Run-and-gun shooter with hand-drawn 1930s-style animation."
+  },
+  {
+    id: 33,
+    name: "Street Fighter",
+    price: 14.99,
+    category: "Game",
+    image: require("./sf.png"),
+    description: "."
+  },
+  {
+    id: 34,
     name: "Elden Ring",
-    image: eldenRing,
-    new_price: 69.99,
-    old_price: 79.99,
+    price: 19.99,
+    category: "Game",
+    image: require("./er.png"),
+    description: ""
   },
   {
     id: 35,
-    name: "Spider-Man 2",
-    image: spiderMan2,
-    new_price: 69.99,
-    old_price: 89.99,
+    name: "Call of DUty: Black Ops 6",
+    price: 39.99,
+    category: "Game",
+    image: require("./b06.png"),
+    description: "."
   },
   {
-    id: 14,
-    name: "God of War: Ragnarok",
-    image: godOfWar,
-    new_price: 59.99,
-    old_price: 79.99,
-  },
-  {
-    id: 8,
-    name: "Starfield",
-    image: starfield,
-    new_price: 69.99,
-    old_price: 89.99,
-  },
-  {
-    id: 15,
-    name: "Zelda: Tears of the Kingdom",
-    image: zelda,
-    new_price: 69.99,
-    old_price: 79.99,
-  },
-  {
-    id: 2,
-    name: "Call of Duty: Modern Warfare III",
-    image: cod,
-    new_price: 69.99,
-    old_price: 89.99,
-  },
-  {
-    id: 17,
-    name: "Final Fantasy XVI",
-    image: ff,
-    new_price: 69.99,
-    old_price: 84.99,
-  },
-  {
-    id: 28,
+    id: 36,
     name: "MarioKart World",
-    image: marioKartWorld,
-    new_price: 59.99,
-    old_price: 79.99,
+    price: 100.00,
+    category: "Game",
+    image: require("./mkw.png"),
+    description: "Free-to-play open-world action RPG with gacha mechanics and anime visuals."
   },
 ];
 

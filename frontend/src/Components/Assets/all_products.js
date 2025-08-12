@@ -4,7 +4,7 @@ const all_products = [
     name: "Nintendo Switch (Original)",
     price: 299.99,
     category: "Console",
-    //: require("./switch.jpeg"),
+    image: require("./switch.png"),
     description: "Original Nintendo Switch with hybrid handheld and TV play modes."
   },
   {
@@ -12,7 +12,7 @@ const all_products = [
     name: "Nintendo Switch 2",
     price: 399.99,
     category: "Console",
-    //: require("./250116-nintendo-switch-2-kb-main-efd48a.jpg"),
+    image: require("./switch2.jpeg"),
     description: "New generation Nintendo Switch with upgraded performance and display."
   },
   {
@@ -20,7 +20,7 @@ const all_products = [
     name: "PlayStation 4 Pro",
     price: 399.99,
     category: "Console",
-    //: require("./ps4pro.jpeg"),
+    image: require("./ps4pro.jpeg"),
     description: "High-performance PS4 with 4K support and improved GPU."
   },
   {
@@ -28,7 +28,7 @@ const all_products = [
     name: "PlayStation 4 Slim",
     price: 299.99,
     category: "Console",
-    //: require("./ps4slim.jpeg"),
+    image: require("./ps4slim.jpeg"),
     description: "Slimmer, more compact PS4 with same gaming power."
   },
   {
@@ -36,7 +36,7 @@ const all_products = [
     name: "PlayStation 5",
     price: 499.99,
     category: "Console",
-    //: require("./PS5.webp"),
+    image: require("./PS5.webp"),
     description: "Next-gen Sony console with lightning-fast SSD and immersive DualSense controller."
   },
   {
@@ -44,7 +44,7 @@ const all_products = [
     name: "PlayStation 5 Pro",
     price: 599.99,
     category: "Console",
-    //: require("./ps5pro.jpeg"),
+    image: require("./ps5pro.jpeg"),
     description: "Upgraded PS5 with enhanced graphics and performance."
   },
   {
@@ -52,7 +52,7 @@ const all_products = [
     name: "Xbox Series S",
     price: 299.99,
     category: "Console",
-    //: require("./seriesS.jpeg"),
+    image: require("./seriesS.jpeg"),
     description: "Affordable all-digital Xbox with fast load times and 1440p gaming."
   },
   {
@@ -60,7 +60,7 @@ const all_products = [
     name: "Xbox Series X",
     price: 499.99,
     category: "Console",
-    //: require("./seriesX.jpeg"),
+    image: require("./seriesX.jpeg"),
     description: "Powerful Xbox with 4K gaming and 1TB SSD."
   },
     {
@@ -68,7 +68,7 @@ const all_products = [
     name: "Nintendo Switch OLED",
     price: 349.99,
     category: "Console",
-    //: require("./switch_oled.jpg"),
+    image: require("./switch_oled.jpg"),
     description: "Enhanced OLED display with vibrant colors and improved audio."
   },
   {
@@ -76,7 +76,7 @@ const all_products = [
     name: "Nintendo Switch Lite",
     price: 199.99,
     category: "Console",
-    //: require("./switch_lite.jpg"),
+    image: require("./switch_lite.jpg"),
     description: "Compact and lightweight console for handheld gaming."
   },
   {
@@ -84,7 +84,7 @@ const all_products = [
     name: "PlayStation 5 Digital Edition",
     price: 449.99,
     category: "Console",
-    //: require("./ps5_digital.jpg"),
+    image: require("./ps5_digital.jpg"),
     description: "All-digital version of PS5 with ultra-high-speed SSD."
   },
   {
@@ -92,7 +92,7 @@ const all_products = [
     name: "Xbox One S",
     price: 249.99,
     category: "Console",
-    //: require("./xbox_one_s.jpg"),
+    image: require("./xbox_one_s.jpg"),
     description: "Slim Xbox One model with 4K video streaming and HDR."
   },
   {
@@ -100,7 +100,7 @@ const all_products = [
     name: "Xbox One X",
     price: 399.99,
     category: "Console",
-    //: require("./xbox_one_x.jpg"),
+    image: require("./xbox_one_x.jpg"),
     description: "Powerful console with 4K gaming and advanced graphics."
   },
   {
@@ -108,7 +108,7 @@ const all_products = [
     name: "Xbox 360",
     price: 199.99,
     category: "Console",
-    //: require("./xbox_360.jpg"),
+    image: require("./xbox_360.jpg"),
     description: "Classic Microsoft console with a large game library."
   },
   {
@@ -116,7 +116,7 @@ const all_products = [
     name: "Xbox Series X Diablo IV Bundle",
     price: 559.99,
     category: "Console",
-    //: require("./xbox_series_x_diablo.jpg"),
+    image: require("./xbox_series_x_diablo.jpg"),
     description: "Series X bundled with Diablo IV and themed design."
   },
   {
@@ -124,57 +124,63 @@ const all_products = [
     name: "Xbox Series S Starter Bundle",
     price: 299.99,
     category: "Console",
-    //: require("./xbox_series_s_bundle.jpg"),
+    image: require("./xbox_series_s_bundle.jpg"),
     description: "Series S with extra controller and Game Pass."
   },
   {
     id: 17,
-    name: "PlayStation Classic",
+    name: "DualSense",
     price: 99.99,
     category: "Console",
-    //: require("./ps_classic.jpg"),
-    description: "Miniature console with preloaded classic PS1 games."
+    image: require("./ps_classic.jpg"),
+    description: ""
   },
    {
     id: 18,
-    name: "The Legend of Zelda: A Link to the Past",
+    name: "The Legend of Zelda: Tears of The Kingdom",
     price: 39.99,
     category: "Game",
-    description: "Classic SNES action-adventure with dungeons, puzzles, and epic storytelling."
+    image: require("./zelda.png"),
+    description: "An epic open-world adventure where Link explores the skies and lands of Hyrule to stop a new ancient threat."
   },
   {
     id: 19,
-    name: "Super Mario Bros. 3",
+    name: "Super Mario Jamboree",
     price: 29.99,
     category: "Game",
-    description: "Iconic NES platformer featuring power-ups and side-scrolling worlds."
+    image: require("./smj.png"),
+    description: "A colorful party game packed with minigames, new boards, and fun multiplayer chaos."
   },
   {
     id: 20,
     name: "Super Smash Bros. Melee",
     price: 49.99,
     category: "Game",
-    description: "Fast-paced multiplayer fighting game for the GameCube."
+    image: require("./ssb.png"),
+    description: "Fast-paced crossover fighting game where Nintendo characters battle in iconic arenas."
   },
   {
     id: 21,
-    name: "Wii Sports",
+    name: "EA FC26",
     price: 19.99,
     category: "Game",
-    description: "Motion-controlled sports mini-games including tennis, bowling, and boxing."
+    image: require("./fc26.png"),
+    description: "EA FC26 is a realistic soccer simulation game with updated teams, modes, and immersive gameplay."
   },
   {
     id: 22,
     name: "Super Mario 3D World",
     price: 59.99,
     category: "Game",
-    description: "Co-op 3D platforming adventure on Wii U featuring Mario and friends."
+    image: require("./3dw.png"),
+    description: "A fun, family-friendly 3D platformer where Mario and friends team up to rescue the Sprixie Kingdom."
   },
   {
     id: 23,
     name: "The Last of Us",
     price: 49.99,
     category: "Game",
+    image: require("./lou.png"),
     description: "Story-driven action-adventure set in a post-apocalyptic world."
   },
   {
@@ -182,55 +188,63 @@ const all_products = [
     name: "Shadow of the Colossus",
     price: 39.99,
     category: "Game",
+    image: require("./soc.png"),
     description: "Epic journey to defeat giant creatures in a desolate land."
   },
   {
     id: 25,
-    name: "Daxter",
+    name: "Animal Well",
     price: 24.99,
     category: "Game",
-    description: "Action platformer starring the lovable ottsel from the Jak series."
+    image: require("./aw.png"),
+    description: "A mysterious indie adventure exploring a strange world filled with puzzles and secrets."
   },
   {
     id: 26,
-    name: "Uncharted: Golden Abyss",
+    name: "Uncharted: Legacy of Thieves",
     price: 34.99,
     category: "Game",
-    description: "Portable Uncharted game filled with puzzles and treasure hunting."
+    image: require("./lot.png"),
+    description: "A thrilling action-packed treasure hunt with stunning visuals and cinematic storytelling."
   },
   {
     id: 27,
     name: "Sonic the Hedgehog",
     price: 19.99,
     category: "Game",
+    image: require("./sonic.png"),
     description: "Speedy side-scrolling platformer that started a franchise."
   },
   {
     id: 28,
-    name: "Asteroids",
+    name: "Roman Rumble",
     price: 14.99,
     category: "Game",
-    description: "Classic arcade space shooter with vector graphics and endless action."
+    image: require("./rr.png"),
+    description: "A fast-paced arena brawler where gladiators clash in intense, brutal combat."
   },
   {
     id: 29,
     name: "Hades",
     price: 39.99,
     category: "Game",
+    image: require("./hades.png"),
     description: "Award-winning rogue-like action game set in Greek mythology."
   },
   {
     id: 30,
-    name: "Baldur's Gate 3",
+    name: "Demon Slayer 2",
     price: 69.99,
     category: "Game",
-    description: "Massive D&D-based RPG with tactical combat and deep choices."
+    image: require("./demon.png"),
+    description: "Demon Slayer 2 is an action-packed anime sequel filled with epic battles and heartfelt moments."
   },
   {
     id: 31,
     name: "Metroid Dread",
     price: 59.99,
     category: "Game",
+    image: require("./md.png"),
     description: "Sci-fi action-platformer featuring Samus in a mysterious alien facility."
   },
   {
@@ -238,35 +252,40 @@ const all_products = [
     name: "Cuphead",
     price: 29.99,
     category: "Game",
-    description: "Run-and-gun shooter with hand-drawn 1930s-style animation."
+    image: require("./cuphead.png"),
+    description: "Cuphead is a challenging run-and-gun game with vintage cartoon-style graphics and tough boss fights."
   },
   {
     id: 33,
-    name: "King of Fighters '98",
+    name: "Street Fighter",
     price: 14.99,
     category: "Game",
-    description: "Arcade-style 2D fighter with a large cast of SNK characters."
+    image: require("./sf.png"),
+    description: "Street Fighter is a classic competitive fighting game known for its iconic characters and combos."
   },
   {
     id: 34,
-    name: "Earthworm Jim",
+    name: "Elden Ring",
     price: 19.99,
     category: "Game",
-    description: "Zany platformer with a super-suited worm and weird enemies."
+    image: require("./er.png"),
+    description: "Elden Ring is a vast open-world action RPG with deep lore, challenging combat, and rich exploration."
   },
   {
     id: 35,
-    name: "Control: Ultimate Edition",
+    name: "Call of DUty: Black Ops 6",
     price: 39.99,
     category: "Game",
-    description: "Paranormal third-person shooter with reality-warping powers."
+    image: require("./b06.png"),
+    description: "Call of Duty: Black Ops 6 is an intense first-person shooter with fast-paced multiplayer and immersive missions."
   },
   {
     id: 36,
-    name: "Genshin Impact",
-    price: 0.00,
+    name: "MarioKart World",
+    price: 100.00,
     category: "Game",
-    description: "Free-to-play open-world action RPG with gacha mechanics and anime visuals."
+    image: require("./mkw.png"),
+    description: "MarioKart World is a fun, fast-paced racing game featuring iconic characters and exciting tracks from the Mario universe."
   }
 ];
 
