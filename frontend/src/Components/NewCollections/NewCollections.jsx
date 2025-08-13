@@ -1,4 +1,4 @@
-// This component now gets data from ShopContext.
+// This component now gets data from ShopContext and handles both image field names.
 
 import React, { useContext } from 'react';
 import './NewCollections.css';
@@ -7,6 +7,8 @@ import { ShopContext } from '../../Context/ShopContext';
 
 export const NewCollections = () => {
     const { all_products } = useContext(ShopContext);
+
+    // Get the 8 most recently added products by sorting by creation date
     const newItems = [...all_products].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 8);
 
     return (
@@ -20,7 +22,8 @@ export const NewCollections = () => {
                             key={i}
                             id={item._id}
                             name={item.name}
-                            image={item.imageUrl} // Pass the URL path
+                            // FIX: Pass the correct image path, checking for both possible field names
+                            image={item.imageUrl || item.image} 
                             price={item.price}
                         />
                     );
