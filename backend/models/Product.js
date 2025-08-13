@@ -3,35 +3,35 @@ const mongoose = require('mongoose');
 const ProductSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please provide a product name'],
+    required: [false, 'Please provide a product name'],
     trim: true,
   },
   description: {
     type: String,
-    required: [true, 'Please provide a product description'],
+    required: [false, 'Please provide a product description'],
   },
   price: {
     type: Number,
-    required: [true, 'Please provide a price'],
+    required: [false, 'Please provide a price'],
   },
   category: {
     type: String,
-    required: [true, 'Please provide a category'],
+    required: [false, 'Please provide a category'],
     enum: ['Video Games', 'Consoles', 'Accessories', 'Collectibles'],
   },
   platform: {
     type: String,
-    required: true,
+    required: false,
     enum: ['PlayStation 5', 'PlayStation 4', 'Xbox Series X|S', 'Xbox One', 'Nintendo Switch', 'PC']
   },
   stock: {
     type: Number,
-    required: true,
+    required: false,
     default: 0,
   },
   imageUrl: {
     type: String,
-    required: [true, 'Please provide an image URL'],
+    required: [false, 'Please provide an image URL'],
   },
   createdAt: {
     type: Date,

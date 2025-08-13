@@ -1,8 +1,8 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path'); // Import the 'path' module
 
 // Load environment variables from .env file
 dotenv.config();
@@ -15,9 +15,17 @@ const orderRoutes = require('./routes/orders');
 // Initialize Express app
 const app = express();
 
-// Middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing
-app.use(express.json()); // To parse JSON bodies
+// --- Middleware ---
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 
+};
+app.use(cors(corsOptions));
+app.use(express.json());
+
+// FIX: Serve static image files from the backend
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
+
 
 // --- Database Connection ---
 const connectDB = async () => {
@@ -26,7 +34,6 @@ const connectDB = async () => {
     console.log('MongoDB connected successfully!');
   } catch (error) {
     console.error('MongoDB connection failed:', error.message);
-    // Exit process with failure
     process.exit(1);
   }
 };
@@ -34,7 +41,6 @@ const connectDB = async () => {
 connectDB();
 
 // --- API Routes ---
-// This sets up the base paths for your API endpoints.
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);

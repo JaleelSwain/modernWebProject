@@ -8,6 +8,7 @@ const { protect } = require('../middleware/authMiddleware');
 // @route   POST /api/orders
 // @access  Private (requires login)
 router.post('/', protect, asyncHandler(async (req, res) => {
+    console.log("got to order")
     const { orderItems, shippingAddress, totalPrice } = req.body;
 
     if (orderItems && orderItems.length === 0) {
@@ -20,6 +21,9 @@ router.post('/', protect, asyncHandler(async (req, res) => {
             shippingAddress,
             totalPrice,
         });
+
+        console.log(req.body)
+        console.log(order)
 
         const createdOrder = await order.save();
         res.status(201).json(createdOrder);

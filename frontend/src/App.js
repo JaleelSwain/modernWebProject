@@ -9,6 +9,7 @@ import Cart from './Pages/Cart';
 import Product from './Pages/Product';
 import SignUpPage from './Pages/SignUpPage';
 import Footer from './Components/Footer/Footer';
+import {OrdersPage} from './Pages/OrdersPage';
 
 
 
@@ -18,16 +19,20 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/consoles' element={<ProductCategory category="Console"/>}/>
-      <Route path='/games' element={<ProductCategory category="Game"/>}/>
-      <Route path="/product" element={<Product/>}>
-        <Route path=':productId' element={<Product/>}/>
-      </Route>
-      <Route path='/cart' element={<Cart/>}/>
-      <Route path='/login' element={<LoginPage/>}/>
-      <Route path='/signup' element={<SignUpPage/>}/> 
-    </Routes>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/consoles' element={<ProductCategory category="Console"/>}/>
+    <Route path='/games' element={<ProductCategory category="Game"/>}/>
+
+    
+    <Route path='/product/:productId' element={<Product/>}/>
+
+    
+    <Route path='/myorders' element={<OrdersPage/>}/>
+
+    <Route path='/cart' element={<Cart/>}/>
+    <Route path='/login' element={<LoginPage/>}/>
+    <Route path='/signup' element={<SignUpPage/>}/> 
+</Routes>
     <Footer/>
     </BrowserRouter>
   </div>

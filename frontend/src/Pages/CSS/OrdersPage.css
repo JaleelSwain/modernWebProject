@@ -1,0 +1,89 @@
+/* General container for the entire orders page */
+.orders-page {
+    width: 80%;
+    margin: 50px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.orders-page h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Container for the list of all order cards */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between each order card */
+}
+
+/* Styling for a single order card */
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Header section of the order card (ID and Date) */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.order-header p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Main body of the card, containing the list of items */
+.order-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Styling for a single item within an order */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.order-item p:first-child {
+    color: #555;
+}
+
+/* Footer section of the card (Status and Total Price) */
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 16px;
+}
+
+.order-footer p {
+    font-weight: 500;
+    color: #4CAF50; /* Green color for status */
+}
+
+.order-footer h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e4002b; /* Your brand's red color */
+}

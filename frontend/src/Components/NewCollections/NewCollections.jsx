@@ -1,18 +1,31 @@
-import React from 'react'
-import './NewCollections.css'
-import new_collection from '../Assets/new_collections'
-import { Item } from '../Items/Item'
+// This component now gets data from ShopContext.
+
+import React, { useContext } from 'react';
+import './NewCollections.css';
+import { Item } from '../Items/Item';
+import { ShopContext } from '../../Context/ShopContext';
 
 export const NewCollections = () => {
-  return (
-    <div className="newcollection">
-        <h1>New Games</h1>
-        <hr />
-        <div className="collections">
-            {new_collection.map((item,i)=>{
-                return <Item key={i} id={item.id} name={item.name} image={item.image} price={item.price} description={item.description}/>
-            })}
+    const { all_products } = useContext(ShopContext);
+    const newItems = [...all_products].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 8);
+
+    return (
+        <div className='new-collections'>
+            <h1>NEW COLLECTIONS</h1>
+            <hr />
+            <div className="collections">
+                {newItems.map((item, i) => {
+                    return (
+                        <Item
+                            key={i}
+                            id={item._id}
+                            name={item.name}
+                            image={item.imageUrl} // Pass the URL path
+                            price={item.price}
+                        />
+                    );
+                })}
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};

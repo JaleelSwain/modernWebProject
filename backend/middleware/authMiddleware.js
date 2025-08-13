@@ -2,46 +2,57 @@ const jwt = require('jsonwebtoken');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/User');
 
+/**
+ * @desc   Protects routes by verifying JWT and attaching the user to the request object.
+ * @route  Middleware
+ */
 const protect = asyncHandler(async (req, res, next) => {
-  console.log('--- Inside protect middleware ---');
   let token;
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
-    console.log('Found "Bearer" token in header.');
+  // Check for the authorization header and ensure it's a Bearer token
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith('Bearer')) {
     try {
-      token = req.headers.authorization.split(' ')[1];
-      console.log('Token extracted:', token);
+      // Extract token from the "Bearer <token>" string
+      token = authHeader.split(' ')[1];
 
+      // Verify the token using the secret key
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      console.log('Token verified. Decoded ID:', decoded.id);
 
+      // Find the user by the ID from the token payload, excluding the password field
       req.user = await User.findById(decoded.id).select('-password');
-      console.log('User found:', req.user ? req.user.username : 'No user found');
-
+      
+      // If a user is not found with that ID (e.g., user was deleted), deny access
       if (!req.user) {
-        return res.status(401).json({ message: 'User not found' });
+        res.status(401);
+        throw new Error('User not found');
       }
 
-      console.log('Calling next()...');
+      // User is authenticated, proceed to the next middleware or route handler
       next();
     } catch (error) {
-      console.error('ERROR in protect middleware:', error.message);
-      return res.status(401).json({ message: 'Not authorized, token failed' });
+      res.status(401);
+      // Catches JWT verification errors (e.g., expired token, invalid signature)
+      throw new Error('Not authorized, token failed');
     }
   } else {
-    console.log('No token found in request.');
-    return res.status(401).json({ message: 'Not authorized, no token' });
+    // If no token or incorrect header is found
+    res.status(401);
+    throw new Error('Not authorized, no token provided');
   }
 });
 
+/**
+ * @desc   Authorizes admin users. Should be used *after* the 'protect' middleware.
+ * @route  Middleware
+ */
 const admin = (req, res, next) => {
+  // 'protect' middleware should have already run and attached the user object
   if (req.user && req.user.role === 'admin') {
-    next();
+    next(); // User is an admin, proceed
   } else {
-    return res.status(403).json({ message: 'Not authorized as an admin' });
+    res.status(403); // 403 Forbidden for non-admin users
+    throw new Error('Not authorized as an admin');
   }
 };
 
