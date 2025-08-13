@@ -9,13 +9,9 @@ export const ProductCategory = (props) => {
   return (
     <div className='product-category'>
       <div className="shopcategory-indexSort">
-<<<<<<< HEAD
         <p>
-          {/* This can be updated later to be dynamic */}
           <span>Showing 1-12</span> out of {all_products.filter(item => item.category === props.category).length} products
         </p>
-=======
->>>>>>> 8e31fc3bb8785f630ac67997ca1484ad2321c610
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="" />
         </div>
@@ -23,14 +19,15 @@ export const ProductCategory = (props) => {
       <div className="shopcategory-products">
         {all_products.map((item,i)=>{
           if (props.category===item.category){
-              // FIX: Pass the MongoDB '_id' to the Item component.
-              // The Item component will use this to create the correct link.
-              return <Item key={i} id={item._id} name={item.name} image={item.image} price={item.price} description={item.description} />
+              return <Item key={i} id={item._id} name={item.name} image={item.imageUrl || item.image} price={item.price} />
           }
           else{
             return null;
           }
         })}
+      </div>
+      <div className="shopcategory-loadmore">
+        Explore More
       </div>
     </div>
   )
